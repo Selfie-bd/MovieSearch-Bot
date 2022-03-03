@@ -26,11 +26,11 @@ async def filter(client, message):
         except UserNotParticipant:
             await client.send_message(
                 chat_id=message.from_user.id,
-                text="**Please Join My Updates Channel to use this Bot!**",
+                text="**Please Join My Updates Channel to use this Bot⚠️! \n\n〽️ Powered by @GroupDcBots**",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton("🤖 Join Updates Channel", url=invite_link.invite_link)
+                            InlineKeyboardButton("❗Join Updates Channel To Use Me ❗", url=invite_link.invite_link)
                         ]
                     ]
                 ),
@@ -56,10 +56,10 @@ async def filter(client, message):
                 file_id = file.file_id
                 filename = f"[{get_size(file.file_size)}] {file.file_name}"
                 btn.append(
-                    [InlineKeyboardButton(text=f"{filename}",callback_data=f"subinps#{file_id}")]
+                    [InlineKeyboardButton(text=f"➻ {filename}",callback_data=f"subinps#{file_id}")]
                     )
         else:
-            await client.send_sticker(chat_id=message.from_user.id, sticker='CAADBQADMwIAAtbcmFelnLaGAZhgBwI')
+            await client.send_sticker(chat_id=message.from_user.id, sticker='CAACAgUAAxkBAAIDMGIgDD9nO-liveNmAqEY72yE3k9VAAJQBAACATo5VzYxv9XrcRHxHgQ')
             return
 
         if not btn:
@@ -75,38 +75,38 @@ async def filter(client, message):
         else:
             buttons = btn
             buttons.append(
-                [InlineKeyboardButton(text="📃 Pages 1/1",callback_data="pages")]
+                [InlineKeyboardButton(text="⎚ Pages ⓵/1",callback_data="pages")]
             )
             if BUTTON:
-                buttons.append([InlineKeyboardButton(text="Close ❌",callback_data="close")])
+                buttons.append([InlineKeyboardButton(text="Close ✗",callback_data="close")])
             poster=None
             if API_KEY:
                 poster=await get_poster(search)
             if poster:
-                await message.reply_photo(photo=poster, caption=f"<b>Here is What I Found In My Database For Your Query {search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
+                await message.reply_photo(photo=poster, caption=f"<b>Here is What I Found In My Database For Your Request {search} ‌</b>\n\n 〽️ Powered by @GroupDcBot", reply_markup=InlineKeyboardMarkup(buttons))
 
             else:
-                await message.reply_text(f"<b>Here is What I Found In My Database For Your Query {search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
+                await message.reply_text(f"<b>Here is What I Found In My Database For Your Request {search} ‌‎</b>\n\n 〽️ Powered by @GroupDcBot", reply_markup=InlineKeyboardMarkup(buttons))
             return
 
         data = BUTTONS[keyword]
         buttons = data['buttons'][0].copy()
 
         buttons.append(
-            [InlineKeyboardButton(text="NEXT ⏩",callback_data=f"next_0_{keyword}")]
+            [InlineKeyboardButton(text="NEXT ➠",callback_data=f"next_0_{keyword}")]
         )    
         buttons.append(
-            [InlineKeyboardButton(text=f"📃 Pages 1/{data['total']}",callback_data="pages")]
+            [InlineKeyboardButton(text=f"⎚ Pages ⓵/{data['total']}",callback_data="pages")]
         )
         if BUTTON:
-            buttons.append([InlineKeyboardButton(text="Close ❌",callback_data="close")])
+            buttons.append([InlineKeyboardButton(text="Close ✗",callback_data="close")])
         poster=None
         if API_KEY:
             poster=await get_poster(search)
         if poster:
-            await message.reply_photo(photo=poster, caption=f"<b>Here is What I Found In My Database For Your Query {search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
+            await message.reply_photo(photo=poster, caption=f"<b>Here is What I Found In My Database For Your Request {search} ‌</b>\n\n 〽️ Powered by @GroupDcBot", reply_markup=InlineKeyboardMarkup(buttons))
         else:
-            await message.reply_text(f"<b>Here is What I Found In My Database For Your Query {search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
+            await message.reply_text(f"<b>Here is What I Found In My Database For Your Request {search} </b>\n\n 〽️ Powered by @GroupDcBot", reply_markup=InlineKeyboardMarkup(buttons))
 
 @Client.on_message(filters.text & filters.group & filters.incoming & filters.chat(AUTH_GROUPS) if AUTH_GROUPS else filters.text & filters.group & filters.incoming)
 async def group(client, message):
@@ -126,7 +126,7 @@ async def group(client, message):
                 file_id = file.file_id
                 filename = f"[{get_size(file.file_size)}] {file.file_name}"
                 btn.append(
-                    [InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{nyva}?start=subinps_-_-_-_{file_id}")]
+                    [InlineKeyboardButton(text=f"➢{filename}", url=f"https://telegram.dog/{nyva}?start=subinps_-_-_-_{file_id}")]
                 )
         else:
             return
@@ -143,37 +143,37 @@ async def group(client, message):
         else:
             buttons = btn
             buttons.append(
-                [InlineKeyboardButton(text="📃 Pages 1/1",callback_data="pages")]
+                [InlineKeyboardButton(text="☸ Pages 1/1",callback_data="pages")]
             )
             if BUTTON:
-                buttons.append([InlineKeyboardButton(text="Close ❌",callback_data="close")])
+                buttons.append([InlineKeyboardButton(text="Close ✗",callback_data="close")])
             poster=None
             if API_KEY:
                 poster=await get_poster(search)
             if poster:
-                await message.reply_photo(photo=poster, caption=f"<b>Here is What I Found In My Database For Your Query {search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
+                await message.reply_photo(photo=poster, caption=f"<b>Here is What I Found In My Database For Your Query {search} ‌</b>\n\n 〽️ Powered by @GroupDcBot", reply_markup=InlineKeyboardMarkup(buttons))
             else:
-                await message.reply_text(f"<b>Here is What I Found In My Database For Your Query {search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
+                await message.reply_text(f"<b>Here is What I Found In My Database For Your Query {search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>\n\n 〽️ Powered by @GroupDcBot", reply_markup=InlineKeyboardMarkup(buttons))
             return
 
         data = BUTTONS[keyword]
         buttons = data['buttons'][0].copy()
 
         buttons.append(
-            [InlineKeyboardButton(text="NEXT ⏩",callback_data=f"next_0_{keyword}")]
+            [InlineKeyboardButton(text="NEXT ➠",callback_data=f"next_0_{keyword}")]
         )    
         buttons.append(
-            [InlineKeyboardButton(text=f"📃 Pages 1/{data['total']}",callback_data="pages")]
+            [InlineKeyboardButton(text=f"☸ Pages 1/{data['total']}",callback_data="pages")]
         )
         if BUTTON:
-            buttons.append([InlineKeyboardButton(text="Close ❌",callback_data="close")])
+            buttons.append([InlineKeyboardButton(text="Close ✗",callback_data="close")])
         poster=None
         if API_KEY:
             poster=await get_poster(search)
         if poster:
-            await message.reply_photo(photo=poster, caption=f"<b>Here is What I Found In My Database For Your Query {search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
+            await message.reply_photo(photo=poster, caption=f"<b>Here is What I Found In My Database For Your Request {search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>\n\n 〽️ Powered by @GroupDcBot", reply_markup=InlineKeyboardMarkup(buttons))
         else:
-            await message.reply_text(f"<b>Here is What I Found In My Database For Your Query {search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
+            await message.reply_text(f"<b>Here is What I Found In My Database For Your Request {search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>\n\n 〽️ Powered by @GroupDcBot", reply_markup=InlineKeyboardMarkup(buttons))
 
     
 def get_size(size):
@@ -218,10 +218,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     [InlineKeyboardButton("⏪ BACK", callback_data=f"back_{int(index)+1}_{keyword}")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(f"📃 Pages {int(index)+2}/{data['total']}", callback_data="pages")]
+                    [InlineKeyboardButton(f"☸ Pages {int(index)+2}/{data['total']}", callback_data="pages")]
                 )
                 if BUTTON:
-                    buttons.append([InlineKeyboardButton(text="Close ❌",callback_data="close")])
+                    buttons.append([InlineKeyboardButton(text="Close ✗",callback_data="close")])
 
                 await query.edit_message_reply_markup( 
                     reply_markup=InlineKeyboardMarkup(buttons)
@@ -231,13 +231,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 buttons = data['buttons'][int(index)+1].copy()
 
                 buttons.append(
-                    [InlineKeyboardButton("⏪ BACK", callback_data=f"back_{int(index)+1}_{keyword}"),InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{int(index)+1}_{keyword}")]
+                    [InlineKeyboardButton("⏪ BACK", callback_data=f"back_{int(index)+1}_{keyword}"),InlineKeyboardButton("NEXT ➠", callback_data=f"next_{int(index)+1}_{keyword}")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(f"📃 Pages {int(index)+2}/{data['total']}", callback_data="pages")]
+                    [InlineKeyboardButton(f"☸ Pages {int(index)+2}/{data['total']}", callback_data="pages")]
                 )
                 if BUTTON:
-                    buttons.append([InlineKeyboardButton(text="Close ❌",callback_data="close")])
+                    buttons.append([InlineKeyboardButton(text="Close ✗",callback_data="close")])
 
                 await query.edit_message_reply_markup( 
                     reply_markup=InlineKeyboardMarkup(buttons)
@@ -257,13 +257,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 buttons = data['buttons'][int(index)-1].copy()
 
                 buttons.append(
-                    [InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{int(index)-1}_{keyword}")]
+                    [InlineKeyboardButton("NEXT ➠", callback_data=f"next_{int(index)-1}_{keyword}")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(f"📃 Pages {int(index)}/{data['total']}", callback_data="pages")]
+                    [InlineKeyboardButton(f"☸ Pages {int(index)}/{data['total']}", callback_data="pages")]
                 )
                 if BUTTON:
-                    buttons.append([InlineKeyboardButton(text="Close ❌",callback_data="close")])
+                    buttons.append([InlineKeyboardButton(text="Close ✗",callback_data="close")])
 
                 await query.edit_message_reply_markup( 
                     reply_markup=InlineKeyboardMarkup(buttons)
@@ -273,13 +273,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 buttons = data['buttons'][int(index)-1].copy()
 
                 buttons.append(
-                    [InlineKeyboardButton("⏪ BACK", callback_data=f"back_{int(index)-1}_{keyword}"),InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{int(index)-1}_{keyword}")]
+                    [InlineKeyboardButton("⏪ BACK", callback_data=f"back_{int(index)-1}_{keyword}"),InlineKeyboardButton("NEXT ➠", callback_data=f"next_{int(index)-1}_{keyword}")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(f"📃 Pages {int(index)}/{data['total']}", callback_data="pages")]
+                    [InlineKeyboardButton(f"☸ Pages {int(index)}/{data['total']}", callback_data="pages")]
                 )
                 if BUTTON:
-                    buttons.append([InlineKeyboardButton(text="Close ❌",callback_data="close")])
+                    buttons.append([InlineKeyboardButton(text="Close ✗",callback_data="close")])
 
                 await query.edit_message_reply_markup( 
                     reply_markup=InlineKeyboardMarkup(buttons)
@@ -288,11 +288,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         elif query.data == "about":
             buttons = [
                 [
-                    InlineKeyboardButton('Update Channel', url='https://t.me/subin_works'),
-                    InlineKeyboardButton('Source Code', url='https://github.com/subinps/Media-Search-bot')
+                    InlineKeyboardButton('🔰Update Channel🔰', url='https://t.me/Groupdcbots'),
+                    InlineKeyboardButton('Source Code🌻', url='https://github.com/Selfie-bd')
                 ]
                 ]
-            await query.message.edit(text="<b>Developer : <a href='https://t.me/subinps_bot'>SUBIN</a>\nLanguage : <code>Python3</code>\nLibrary : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio</a>\nSource Code : <a href='https://github.com/subinps/Media-Search-bot'>Click here</a>\nUpdate Channel : <a href='https://t.me/subin_works'>XTZ Bots</a> </b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+            await query.message.edit(text="<b>🎎 Developer : <a href='https://t.me/IssuesDcbot'>@IssuesDcbot #nopm </a>\n🗣️Language : <code>Python3</code>\nLibrary : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio</a>\n👁️Source Code : <a href='https://github.com/selfie-bd'>Click here🚀</a>\n🔰 Update Channel : <a href='https://t.me/groupdcbots'>Groupdcbots</a> </b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
 
 
@@ -300,7 +300,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ident, file_id = query.data.split("#")
             filedetails = await get_file_details(file_id)
             for files in filedetails:
-                title = files.file_name
+                title = files.file_name 
                 size=get_size(files.file_size)
                 f_caption=files.caption
                 if CUSTOM_FILE_CAPTION:
@@ -313,8 +313,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     f_caption = f"{files.file_name}"
                 buttons = [
                     [
-                        InlineKeyboardButton('More Bots', url='https://t.me/subin_works/122'),
-                        InlineKeyboardButton('Update Channel', url='https://t.me/subin_works')
+                        InlineKeyboardButton('❄️ More Bots 🤖', url='https://t.me/groupdcbots/7722'),
+                        InlineKeyboardButton('🔰Update Channel🔰', url='https://t.me/groupdcbots')
                     ]
                     ]
                 
@@ -327,7 +327,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     )
         elif query.data.startswith("checksub"):
             if AUTH_CHANNEL and not await is_subscribed(client, query):
-                await query.answer("I Like Your Smartness, But Don't Be Oversmart 😒",show_alert=True)
+                await query.answer("I Like Your Smartness, But Don't Be Oversmart 😒 Join Then Come here ❗",show_alert=True)
                 return
             ident, file_id = query.data.split("#")
             filedetails = await get_file_details(file_id)
@@ -345,8 +345,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     f_caption = f"{title}"
                 buttons = [
                     [
-                        InlineKeyboardButton('More Bots', url='https://t.me/subin_works/122'),
-                        InlineKeyboardButton('Update Channel', url='https://t.me/subin_works')
+                        InlineKeyboardButton('More Bots❄️', url='https://t.me/groupdcbots/7122'),
+                        InlineKeyboardButton('🔰 Update Channel', url='https://t.me/groupdcbots')
                     ]
                     ]
                 
@@ -369,4 +369,4 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 await query.message.delete()
                 
     else:
-        await query.answer("കൌതുകും ലേശം കൂടുതൽ ആണല്ലേ👀",show_alert=True)
+        await query.answer("is it little more fun? 👀",show_alert=True)
