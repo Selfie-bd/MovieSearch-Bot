@@ -67,7 +67,7 @@ async def index_files(bot, message):
                     current+=1
                     nyav+=1
                     if nyav == 20:
-                        await msg.edit(f"Total messages fetched: {current}\nTotal messages saved: {total_files}")
+                        await msg.edit(f"✨Total messages fetched: {current}\n🛡️Total messages saved: {total_files}")
                         nyav -= 20
                     if current == total:
                         break
@@ -77,4 +77,4 @@ async def index_files(bot, message):
                 logger.exception(e)
                 await msg.edit(f'Error: {e}')
             else:
-                await msg.edit(f'Total {total_files} Saved To DataBase!')
+                await msg.edit(f'☯️ Total {total_files} Saved To DataBase!')
