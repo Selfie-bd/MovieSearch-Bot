@@ -97,13 +97,15 @@ async def start(bot, cmd):
             parse_mode="Markdown",
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [
+                [   
+                    [   InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/FlimSeriesDcBot?startgroup=true')
+                    ],
                     [
                         InlineKeyboardButton("❗Search Here", switch_inline_query_current_chat=''),
                         InlineKeyboardButton("Other Bots 🤖", url="https://t.me/groupdcbots/122")
                     ],
                     [
-                        InlineKeyboardButton("About", callback_data="about")
+                        InlineKeyboardButton("About📝", callback_data="about")
                     ]
                 ]
             )
